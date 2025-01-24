@@ -29,5 +29,34 @@ function getHumanChoice(){
     }
 }
 
-console.log(getHumanChoice())
-console.log(getComputerChoice())
+//Function for evaluating who won
+function playRound(humanChoice, compChoice){
+        if (humanChoice == "You have selected Rock" && compChoice == "Computer have selected PAPER") {
+            return "You won this round :) ";
+        }
+        else if (humanChoice == "You have selected Paper" && compChoice == "Computer have selected SCISSOR"){
+            return "You won this round :) ";
+        }
+        else if (humanChoice == "You have selected Scissor" && compChoice == "Computer have selected ROCK"){
+            return "You won this round :) ";
+        }
+        else if(compChoice == "Computer have selected ROCK" && humanChoice == "You have selected Paper"){
+            return "Computer won this round :( ";
+        }
+        else if(compChoice == "Computer have selected PAPER" && humanChoice == "You have selected Scissor"){
+            return "computer won this round :( ";
+        }
+        else if(compChoice == "Computer have selected SCISSOR" && humanChoice == "You have selected Rock"){
+            return "computer won this round :( ";
+        } 
+        else {
+            return "Its a Tie"
+        }
+}
+
+const humanSelection = getHumanChoice();
+const compSelection = getComputerChoice();
+
+console.log(playRound(humanSelection, compSelection))
+console.log(compSelection)
+console.log(humanSelection)
